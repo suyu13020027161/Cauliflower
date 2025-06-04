@@ -1,0 +1,12 @@
+#开启机械臂
+ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:=vx300s
+
+#开启仿真
+ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:=vx300s use_sim:=true
+
+#机械臂卸力
+ros2 service call /vx300s/torque_enable interbotix_xs_msgs/srv/TorqueEnable "{cmd_type: 'group', name: 'all', enable: false}"
+
+#机械臂上劲
+ros2 service call /vx300s/torque_enable interbotix_xs_msgs/srv/TorqueEnable "{cmd_type: 'group', name: 'all', enable: true}"
+
