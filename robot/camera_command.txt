@@ -1,0 +1,21 @@
+http://10.0.0.1/
+
+ssh pi@10.0.0.1
+raspberry
+
+cd ~/ros_ws
+catkin build
+source devel/setup.bash
+
+roslaunch leo_joy_example joy.launch
+
+
+
+
+ZED_Explorer
+ 
+realsense-viewer
+
+cheese
+
+
